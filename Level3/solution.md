@@ -1,16 +1,17 @@
 ## Description
 
-Claim ownership of the contract below to complete this level.
+This is a coin flipping game where you need to build up your winning streak by guessing the outcome of a coin flip. To complete this level you'll need to use your psychic abilities to guess the correct outcome 10 times in a row.
+
+## Interesting Problems Faced
+
+The outcome of the coinflip can be predicted before calling the flip function, initially I thought this vulnerability can be exploited to always guess the right outcome with a script and call it 10 times manually.
+
+Although it worked on tests, in the live sepolia testnet it was failing to achieve the 10 consecutive wins, I concluded this is do to a small delay between the script execution and the mining of the transaction wich would differ on the block hash.
 
 ## Solution
 
-The contracts constructor was a public function, when calling it again the msg.sender gains ownership
+To solve the problem an attacker contract was deployed on sepolia with a function to make the flips with the predicted outcome, this way it worked because now the blockhash would be the one of the mined block.
 
-## Commands
 
-await contract.Fal1out()
-await contract.owner()
-'0x0000000000000000000000000000000000000000'
-{tx: '0xfdbb6d02339953552000d5ba290f0c9a58eb70d4e827dbd5260f62669937140d', receipt: {…}, logs: Array(0)}
-await contract.owner()
-'0xc717879FBc3EA9F770c0927374ed74A998A3E2Ce'
+
+

