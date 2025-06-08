@@ -33,7 +33,7 @@ contract Attacker is Script {
 // forge script Level4/attacker.s.sol --broadcast --rpc-url https://1rpc.io/sepolia
 
 // # Cast send for the contract
-// cast send 0xfA2dD651a41da693E6e53a002f6A04466c5c6793 "changeOwner()" --rpc-url https://1rpc.io/sepolia --private-key $PRIVATE_KEY
+// cast send 0xD4E95E7F8BB321786CD1ecFd6FE7A00548C0665B "changeOwner()" --rpc-url https://1rpc.io/sepolia --private-key $PRIVATE_KEY
 
 // To check consecutive wins:
 // cast call 0xfA2dD651a41da693E6e53a002f6A04466c5c6793 "changeOwner()" --rpc-url wss://sepolia.drpc.org
