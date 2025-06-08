@@ -1,7 +1,7 @@
 {
   "transactions": [
     {
-      "hash": "0x7572dadda525a9ded6a089c1b0815f399bae5e3822db431f197dcc40caab7fe6",
+      "hash": null,
       "transactionType": "CREATE",
       "contractName": "TelephoneAttacker",
       "contractAddress": "0xd4e95e7f8bb321786cd1ecfd6fe7a00548c0665b",
@@ -21,24 +21,7 @@
       "isFixedGasLimit": false
     }
   ],
-  "receipts": [
-    {
-      "status": "0x1",
-      "cumulativeGasUsed": "0x8c2887",
-      "logs": [],
-      "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
-      "type": "0x2",
-      "transactionHash": "0x7572dadda525a9ded6a089c1b0815f399bae5e3822db431f197dcc40caab7fe6",
-      "transactionIndex": "0x58",
-      "blockHash": "0x70aa4be7c3a38c418d9e8256b4bcd72a6c46308c8871c4a191f722fbcc06f181",
-      "blockNumber": "0x81c7f3",
-      "gasUsed": "0x2510f",
-      "effectiveGasPrice": "0xf424f",
-      "from": "0xc717879fbc3ea9f770c0927374ed74a998a3e2ce",
-      "to": null,
-      "contractAddress": "0xd4e95e7f8bb321786cd1ecfd6fe7a00548c0665b"
-    }
-  ],
+  "receipts": [],
   "libraries": [],
   "pending": [],
   "returns": {
@@ -47,7 +30,7 @@
       "value": "0xD4E95E7F8BB321786CD1ecFd6FE7A00548C0665B"
     }
   },
-  "timestamp": 1749403830,
+  "timestamp": 1749402574,
   "chain": 11155111,
   "commit": "00024db"
 }

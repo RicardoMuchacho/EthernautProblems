@@ -7,7 +7,7 @@ import {TelephoneAttacker} from "./attacker.sol";
 import {console} from "forge-std/Test.sol";
 
 contract Attacker is Script {
-    address public target = 0x6e964a4A8cCfd0e3c598c2cBEeB55f0c7bA6342d;
+    address public target = 0xc44d190689b311Bfe30B1Beb0FFf366E3A7be84b;
     string SEPOLIA_RPC = "wss://sepolia.drpc.org";
     uint256 Factor = 57896044618658097711785492504343953926634992332820282019728792003956564819968;
 
@@ -37,3 +37,6 @@ contract Attacker is Script {
 
 // To check consecutive wins:
 // cast call 0xfA2dD651a41da693E6e53a002f6A04466c5c6793 "changeOwner()" --rpc-url wss://sepolia.drpc.org
+
+
+//$ forge script Level4/attacker.s.sol --broadcast --rpc-url https://1rpc.io/sepolia --verify
