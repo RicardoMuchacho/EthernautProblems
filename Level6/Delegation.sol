@@ -1,6 +1,5 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-import {Test, console} from "forge-std/Test.sol";
 
 contract Delegate {
     address public owner;
@@ -24,7 +23,6 @@ contract Delegation {
     }
 
     fallback() external {
-        console.log(string(msg.data));
         (bool result,) = address(delegate).delegatecall(msg.data);
         if (result) {
             this;
