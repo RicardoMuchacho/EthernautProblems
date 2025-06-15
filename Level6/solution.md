@@ -10,7 +10,7 @@ The goal of this level is for you to claim ownership of the instance you are giv
 
 ## Solution
 
-By calling the Delegation contract with contracts fallback method we are able to send a delegatecall and change the ownership of the contract executing Delegate contracts pwn() function. 
+By calling the Delegation contract fallback method we are able to send a delegatecall and change the ownership of the contract executing Delegate's contract pwn(). 
 
 ## Commands
 
