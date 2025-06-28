@@ -11,4 +11,5 @@ contract ForceAttacker {
     function attack() public {
         selfdestruct(payable(_target));
     }
+    receive() external payable {}
 }
