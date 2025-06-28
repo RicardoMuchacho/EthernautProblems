@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 import {Test, console} from "forge-std/Test.sol";
-import {Force} from "../src/Force.sol";
+import {Force} from "../Level7/Force.sol";
 
 contract MockContract {
     address _target;

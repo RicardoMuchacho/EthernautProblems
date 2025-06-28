@@ -3,4 +3,8 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
+[rpc_endpoints]
+sepolia = "wss://sepolia.drpc.org"
+mainnet = "https://eth-mainnet.alchemyapi.io/v2/your-key"
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
